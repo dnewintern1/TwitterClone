@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView listVIew;
     private ArrayList<UserDetails> arrayList;
 
+    private TextView loadingText;
+
 
 
     @Override
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listVIew = findViewById(R.id.listVIew);
+        loadingText = findViewById(R.id.loadingText);
 
         arrayList =new ArrayList<>();
 
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 // Create an ArrayAdapter to populate the ListView
                 UserAdapter adapter = new UserAdapter(MainActivity.this, R.layout.user_list_item, arrayList);
                 listVIew.setAdapter(adapter);
+                loadingText.setVisibility(View.INVISIBLE);
 
             }
 
