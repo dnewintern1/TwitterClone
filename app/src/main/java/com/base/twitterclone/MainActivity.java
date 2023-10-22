@@ -2,9 +2,18 @@ package com.base.twitterclone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,12 +30,15 @@ public class MainActivity extends AppCompatActivity {
     private ListView listVIew;
     private ArrayList<UserDetails> arrayList;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         listVIew = findViewById(R.id.listVIew);
+
         arrayList =new ArrayList<>();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -58,5 +70,23 @@ public class MainActivity extends AppCompatActivity {
                 // Handle any errors here
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.postimage) {
+            startActivity(new Intent(MainActivity.this, Loginactivity.class));
+        }
+             else {
+                // Handle the case when permission is already granted
+            }
+
+        return super.onOptionsItemSelected(item);
     }
 }

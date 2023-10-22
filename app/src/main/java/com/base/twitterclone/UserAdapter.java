@@ -28,6 +28,9 @@ public class UserAdapter extends ArrayAdapter<UserDetails> {
         UserDetails user = getItem(position);
         if (user != null) {
             TextView nameTextView = view.findViewById(R.id.userNameTextView);
+            TextView checkBox = view.findViewById(R.id.checkBox);
+            TextView checkText = view.findViewById(R.id.checkText);
+
 
             nameTextView.setText(user.getProfileName());
         }
