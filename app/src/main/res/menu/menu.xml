@@ -8,6 +8,13 @@
         app:showAsAction="always"
         android:title="LOGOUT"/>
 
+    <item
+        android:id="@+id/sentTweet"
+        android:icon="@drawable/baseline_send_24"
+        android:orderInCategory="101"
+        app:showAsAction="always"
+        android:title="LOGOUT"/>
+
 
 
 

@@ -88,9 +88,10 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.postimage) {
             startActivity(new Intent(MainActivity.this, Loginactivity.class));
         }
-             else {
-                // Handle the case when permission is already granted
-            }
+        if (item.getItemId() == R.id.sentTweet){
+            startActivity(new Intent(MainActivity.this,TweetActivity.class));
+        }
+
 
         return super.onOptionsItemSelected(item);
     }
