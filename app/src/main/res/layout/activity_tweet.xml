@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".TweetActivity">
 
     <EditText
@@ -12,25 +13,36 @@
         android:layout_height="43dp"
         android:layout_marginTop="14dp"
         android:ems="10"
+        android:layout_gravity="center_horizontal"
         android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@id/btnSendTweet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="write your tweets here"/>
 
     <Button
         android:id="@+id/btnSendTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_margin="30dp"
+        android:layout_gravity="center_horizontal"
         android:background="@color/lavander"
         android:onClick="sendTweet"
         android:text="tweet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
         app:rippleColor="#2386D5" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="392dp"
+        android:layout_height="61dp"
+        android:layout_margin="5dp"
+        android:background="#4673CD"
+        android:gravity="center"
+        android:text="View Others User Text"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <ListView
+        android:id="@+id/tweetListView"
+        android:layout_width="409dp"
+        android:layout_height="495dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="4dp"/>
+</LinearLayout>
